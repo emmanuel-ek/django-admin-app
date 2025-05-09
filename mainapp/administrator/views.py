@@ -10,21 +10,25 @@ from django.contrib.auth import authenticate, login, logout
 
 
 @require_GET
+@login_required(login_url='login_view')
 def get_dashboard(request):
     return render(request, 'dashboard/index.html')
 
 @require_GET
+@login_required(login_url='login_view')
 def get_categories(request):
     categories = Category.objects.all()
     data = list(categories.values()) if categories else []
     return render(request, 'category/index.html', {'categories': data})
 
 @require_GET
+@login_required(login_url='login_view')
 def create_category(request):
     return render(request, 'category/create.html')
 
 
 @require_POST
+@login_required(login_url='login_view')
 def store_category(request):
     form = CategoryForm(request.POST)
     if not form.is_valid():
@@ -33,6 +37,7 @@ def store_category(request):
     form.save()
     return redirect('category_list')
 
+@login_required(login_url='login_view')
 def delete_category(request, id):
     category = get_object_or_404(Category, id=id)
     category.delete()
