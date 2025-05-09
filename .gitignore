@@ -1,0 +1,15 @@
+# Virtual Environment
+myenv/
+venv/
+ENV/
+env/
+.venv/
+.env/
+
+# VS Code
+.vscode/
+*.code-workspace
+.env
+
+migrations/
+myvenv
