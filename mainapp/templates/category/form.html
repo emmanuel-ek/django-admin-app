@@ -1,0 +1,27 @@
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label class="control-label" for="category_name">Category Name : <span class="text-red">*</span></label>
+            <input type="text" class="form-control" name="category_name" id="category_name" value="{{ category.category_name|default:'' }}">
+            {% if form.category_name.errors %}
+                <span class="text-danger small">
+                    <strong>{{ form.category_name.errors.0 }}</strong>
+                </span>
+            {% endif %}
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label class="control-label" for="description">Description : <span class="text-red">*</span></label>
+            <textarea class="form-control" name="description" id="description">{{ category.description|default:'' }}</textarea>
+            {% if form.description.errors %}
+                <span class="text-danger small">
+                    <strong>{{ form.description.errors.0 }}</strong>
+                </span>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+
