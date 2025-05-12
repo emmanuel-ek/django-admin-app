@@ -1,0 +1,73 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label class="control-label" for="username">Username : <span class="text-red">*</span></label>
+            <input type="text" class="form-control" name="username" id="username" value="{{ user.username|default:'' }}">
+            {% if form.username.errors %}
+                <span class="text-danger small">
+                    <strong>{{ form.username.errors.0 }}</strong>
+                </span>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group">
+            <label class="control-label" for="email">Email : <span class="text-red">*</span></label>
+            <input type="email" class="form-control" name="email" id="email" value="{{ user.email|default:'' }}">
+            {% if form.email.errors %}
+                <span class="text-danger small">
+                    <strong>{{ form.email.errors.0 }}</strong>
+                </span>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group">
+            <label class="control-label" for="first_name">First Name : <span class="text-red">*</span></label>
+            <input type="text" class="form-control" name="first_name" id="first_name" value="{{ user.first_name|default:'' }}">
+            {% if form.first_name.errors %}
+                <span class="text-danger small">
+                    <strong>{{ form.first_name.errors.0 }}</strong>
+                </span>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group">
+            <label class="control-label" for="last_name">Last Name : <span class="text-red">*</span></label>
+            <input type="text" class="form-control" name="last_name" id="last_name" value="{{ user.last_name|default:'' }}">
+            {% if form.last_name.errors %}
+                <span class="text-danger small">
+                    <strong>{{ form.last_name.errors.0 }}</strong>
+                </span>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group">
+            <label class="control-label" for="password">Password : <span class="text-red">*</span></label>
+            <input type="password" class="form-control" name="password" id="password">
+            {% if form.password.errors %}
+                <span class="text-danger small">
+                    <strong>{{ form.password.errors.0 }}</strong>
+                </span>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group">
+            <label class="control-label" for="password_confirm">Comfirm Password : <span class="text-red">*</span></label>
+            <input type="password" class="form-control" name="password_confirm" id="password_confirm" value="">
+            {% if form.password_confirm.errors %}
+                <span class="text-danger small">
+                    <strong>{{ form.password_confirm.errors.0 }}</strong>
+                </span>
+            {% endif %}
+        </div>
+    </div>
+</div>
